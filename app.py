@@ -29,7 +29,7 @@ def get_completion_from_messages(messages, model="gpt-3.5-turbo", temperature=0)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('index1.html')
 
 @app.route('/chat', methods=['POST'])
 def chat():
