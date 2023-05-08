@@ -54,7 +54,63 @@ def chat():
     Includes members with current employer listed as L&T Technology Services, including part-time roles.
     Headquarters Vadodara, Gujarat
     Specialties Mechanical Engineering Services, Embedded Systems Services, Product Lifecycle Management (PLM), Engineering Analytics, Power Electronics, M2M, Internet of Things (IoT), and Digital Engineering
-     L.
+    L.
+    ENGINEERING THE CHANGE
+    INDUSTRY
+    Communication
+    Consumer Electronics
+    Healthcare
+    Industrial Products
+    Media & Entertainment
+    Oil & Gas
+    Plant Engineering
+    Public Infrastructure & Smart Cities
+    Semiconductors
+    Software Products
+    Transportation
+    SERVICES
+    Digital
+    Products
+    Manufacturing
+    Operations
+    SOLUTIONS
+    AiCE
+    AiKno™
+    AnnotAi
+    ARC
+    Avertle®
+    Chest-rAi™
+    Cogmation
+    Connected Security
+    ESM
+    FlyBoard®
+    i-BEMS
+    nBOn
+    Fusion
+    Semiconductor IP
+    UBIQWeise 2.0
+    INSIGHTS
+    Blogs
+    News
+    POV
+    eBooks
+    EXPLORE LTTS
+    About Us
+    Accolades
+    Alliances
+    Analysts
+    Board of Directors
+    Careers
+    CSR
+    Events & Webinars
+    Investors
+    Media Kit
+    Nearshore Centers
+    News & Media
+    Quality Management
+    Resources
+    Sustainability
+    Testimonials
      If the answer to the query is not found in these two links, say 'no data found'. \
      """} ]# accumulate messages
 
