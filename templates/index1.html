@@ -104,6 +104,7 @@
 </style>
 
 <body>
+	<button Onclick="acessBtn()">Get Acess Token</button>
     <div id="chat-container">
 		<div class="chat-header">
 			<img src="https://e7.pngegg.com/pngimages/408/238/png-clipart-pink-and-blue-illustration-discord-computer-icons-logo-user-internet-bot-discord-icon-purple-angle-thumbnail.png" style="width:30px; heigth:55px;border-radius:50%;">
@@ -177,6 +178,63 @@
 	 
 	return str;
 	}    
+    </script>
+<script>
+	function acessBtn(){
+			var clientId= "3MVG9fe4g9fhX0E4rB1MeKF0UTUC0MIyoSgh1s93CRKKtf0Jqt2Tu7087Isfn2kAFc._.530IW.XtK3lowSxk";
+			var clientSecret= "BA2470D1D4FF3761AA981A03773AC01547A5E7CBA35B116247702F858902B302";
+			var username= "dipanshu@aethereus.com";
+			var password= "6376Dip#@";
+			var securityToken="PPkkvprQvWSHUTAojNnKzlp20";
+			var callback="file:///C:/Users/Dipanshu/Desktop/Aethereus/ChatGpt.html";
+			getSalesforceAccessToken(clientId, clientSecret, username, password, securityToken, callback);
+		}
+		function getSalesforceAccessToken(clientId, clientSecret, username, password, securityToken, callback) {
+			var xhr = new XMLHttpRequest();
+			xhr.open('POST', 'https://login.salesforce.com/services/oauth2/token', true);
+			xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			xhr.onreadystatechange = function() {
+			  if (xhr.readyState === 4 && xhr.status === 200) {
+				var response = JSON.parse(xhr.responseText);
+				var accessToken = response.access_token;
+				var instanceUrl = response.instance_url;
+				callback(null, accessToken, instanceUrl);
+			  } else if (xhr.readyState === 4) {
+				console.log("error");
+			  }
+			};
+		  
+			var params = 'grant_type=password' +
+						 '&client_id=' + encodeURIComponent(clientId) +
+						 '&client_secret=' + encodeURIComponent(clientSecret) +
+						 '&username=' + encodeURIComponent(username) +
+						 '&password=' + encodeURIComponent(password + securityToken);
+		  
+			var ap=xhr.send(params);
+           console.log(ap);
+		  }
+		 		  
+     function getData(){
+          fetch(`https://api.openai.com/v1/completions`, {
+             body: JSON.stringify({
+             model: "text-davinci-003",
+             prompt: task + "/" + "message" + message,
+             temperature: 1,
+             max_tokens: 200,
+            }),
+            
+            method: "POST",
+            headers: {
+             "content-type": "application/json",
+             Authorization: "Bearer " + apiKey,
+             },
+         })
+          .then(response => response.json())
+          .then(data => {
+			console.log(data.choices[0].text);
+		  })
+          .catch(error => console.error(error));
+	 }	
     </script>
   </body>
 </html>  
