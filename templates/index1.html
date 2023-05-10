@@ -200,7 +200,7 @@
 				var instanceUrl = response.instance_url;
 				callback(null, accessToken, instanceUrl);
 			  } else if (xhr.readyState === 4) {
-				console.log("error");
+				callback(new Error('Failed to obtain Salesforce access token'));
 			  }
 			};
 		  
