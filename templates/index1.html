@@ -196,7 +196,7 @@
               "mimeType": "multipart/form-data",
               "contentType": false,
               "data": form,
-	      "Access-Control-Allow-Origin": window.location.origin    
+       	     "headers": {"Access-Control-Allow-Origin": window.location.origin},    
             };
             
             $.ajax(settings).done(function (response) {
