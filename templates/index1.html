@@ -181,14 +181,27 @@
     </script>
 <script>
 	function acessBtn(){
-			var clientId= "3MVG9fe4g9fhX0E4rB1MeKF0UTY8d.BfWC1fpNzcEnf1wCORzrGfNPm64md_XWUuqPFHYDftDrFrvsB7QFPC9";
-			var clientSecret= "7D49B72A5DDD71190A680E9CEB2533C429ABF69EDD477828D422320782EE78AF";
-			var username= "dipanshu@aethereus.com";
-			var password= "6376Dip#@";
-			var securityToken="PPkkvprQvWSHUTAojNnKzlp20";
-			var callback="https://lttschatbot-p72h.onrender.com";
-			getSalesforceAccessToken(clientId, clientSecret, username, password, securityToken, callback);
-		}
+	    var form = new FormData();
+            form.append("client_id", "3MVG9fe4g9fhX0E4rB1MeKF0UTUC0MIyoSgh1s93CRKKtf0Jqt2Tu7087Isfn2kAFc._.530IW.XtK3lowSxk");
+            form.append("client_secret", "BA2470D1D4FF3761AA981A03773AC01547A5E7CBA35B116247702F858902B302");
+            form.append("username", "dipanshu@aethereus.com");
+            form.append("password", "112001Dip#@kay6opTZTXbwtnwgepw0mJoyi");
+            form.append("grant_type", "password");
+            
+            var settings = {
+              "url": "https://login.salesforce.com/services/oauth2/token",
+              "method": "POST",
+              "timeout": 0,
+              "processData": false,
+              "mimeType": "multipart/form-data",
+              "contentType": false,
+              "data": form,
+            };
+            
+            $.ajax(settings).done(function (response) {
+              console.log(response);
+            });
+	}
 		function getSalesforceAccessToken(clientId, clientSecret, username, password, securityToken, callback) {
 			var xhr = new XMLHttpRequest();
 			xhr.open('POST', 'https://login.salesforce.com/services/oauth2/token', true);
